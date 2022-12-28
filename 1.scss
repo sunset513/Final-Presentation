@@ -1,0 +1,24 @@
+.box{
+    width: 100%;
+    margin: 0 auto;
+    h1{
+      padding: 10px;
+      columns: 1;
+      color: cornflowerblue;
+    }
+  };
+  h1{
+    padding: 10px;
+    columns: 1;
+    color: cornflowerblue;
+  }
+  svg{
+    border:1pxsolid#ccc;
+  }
+  .axis.domain{
+    stroke:none;
+  }
+  .xline{
+    stroke:white;
+  }
+  

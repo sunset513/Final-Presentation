@@ -1,0 +1,70 @@
+.box {
+  width: 100%;
+  margin: 0 auto;
+}
+.box h1 {
+  padding: 10px;
+  -moz-columns: 1;
+       columns: 1;
+  color: cornflowerblue;
+}
+
+h1 {
+  padding: 10px;
+  -moz-columns: 1;
+       columns: 1;
+  color: cornflowerblue;
+}
+
+svg {
+  border: 1pxsolid #ccc;
+}
+
+.axis.domain {
+  stroke: none;
+}
+
+.x axis {
+  stroke: white;
+}/*# sourceMappingURL=1.css.map */
+
+.tooltip{
+  position:fixed;
+  opacity: 0;
+  pointer-events: none;
+  background: #eee;
+  max-width: 300px;
+}
+
+.tip-header{
+  border-bottom: 2px solid white;
+  padding: 0.9rem 1rem;
+}
+
+.tip-body{
+  padding : 0.4rem 0;
+}
+
+h3,h4{
+  font-size:0.9rem;
+  color:#555;
+  margin:0;
+}
+
+h4{
+  font-weight:normal;
+}
+
+.tip-info{
+  margin:0;
+  padding:0.3rem1em;
+  font-size:0.8em;
+}
+.prompttest{
+  position: fixed;
+}
+
+/*偶數元素設定不同背景樣式*/
+.tip-info:nth-of-type(even){
+  background:#e0e0e0;
+}

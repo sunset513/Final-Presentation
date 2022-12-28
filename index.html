@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/1.css">
+        <h1>資料視覺化 期末報告</h1>
+        <input class='cleanChart' type="button" value="點此按鈕清除所有圖表">
+        <p class='show'></p>
+        <script>
+           
+        </script>
+        <body>
+            <!-- <div class="catagory">
+                <button data-name="SemiConductor">半導體業</button>
+                <button data-name="ElectronicParts">電子零組件業</button>
+                <button data-name="ComputersAndPeripheral">電腦及週邊設備業</button>
+            </div> -->
+            <div class="bar-chart-container"></div>
+
+            <div class="controls">
+                <button data-name="revenue">營業收入</button>
+                <button data-name="netIncome">營業利益</button>
+                <button data-name="eps">每股盈餘</button>
+                <button data-name="comprehensiveIcome">營業外收入及支出</button>
+                <button data-name="IncomeAfterTax">稅後淨利</button>
+                <button data-name="grossProfitMargin">毛利率</button>
+                <input class='prompttest' type="button" value="點此輸入欲查詢的產業類別">
+            </div>
+            <div  class="tooltip" >
+                <div class="tip-header">
+                    <h3></h3>
+                    <h4></h4>
+                    <div class="tip-body"></div>
+                </div>
+            </div>
+            
+            <script src="//unpkg.com/d3"></script>
+            <script src="/main.js"  type="module"></script>
+        </body>
+    </head>
+</html>
