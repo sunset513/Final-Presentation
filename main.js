@@ -26,7 +26,7 @@ function formatTicks(d){
     .replace('G','bil')
     .replace('T','tri')
 }
-//Data Selection
+//Data Selection 會選擇輸入的產業類別
 function filterData(data){
     return data.filter(
         d => {
@@ -36,7 +36,6 @@ function filterData(data){
             );
         }
     );
-    
 }
 
 function prepareBarChartData(data){
@@ -248,7 +247,6 @@ function setupCanvas(barChartData, companyClean){
 var catagories = "其他";
 function ready(companies){
     var button = document.querySelector('.prompttest');
-    var button2 = document.querySelector('.cleanChart');
     var showtxt = document.querySelector('.show');
     function popup3(e) {
         var guest = window.prompt('請輸入欲查詢產業類別');
