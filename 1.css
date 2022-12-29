@@ -29,7 +29,6 @@ svg {
 }/*# sourceMappingURL=1.css.map */
 .tooltip{
   position:absolute;
-  height: 1px;
-  text-align: right;
   background-color: aliceblue;
+  opacity: initial;
 }
