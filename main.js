@@ -16,7 +16,7 @@ function type(d){
         netIncome:+d.netIncome,
         comprehensiveIcome:+d.comprehensiveIcome,
         IncomeAfterTax:+d.IncomeAfterTax,
-        grossProfitMargin:+d.netIncome/d.revenue,
+        grossProfitMargin:+d.netIncome/d.revenue/100000000,
     }
 }
 
@@ -89,7 +89,7 @@ function setupCanvas(barChartData, companyClean){
         yAxisDraw.transition(transitionDelay).call(yAxis.scale(yScale));
 
         //Update Header
-        header.select('tspan').text(` ${metric} companies ${metric === 'grossProfitMargin'  ? '' : 'in $TWD'}`);
+        header.select('tspan').text(`前20名公司 ${metric} 數據 ${metric === 'grossProfitMargin'  ? '' : 'in $TWD'}  產業類:${catagories}`);
 
         //Update Bar
         bars.selectAll('.bar').data(data, d=>d.companyName).join(
@@ -249,35 +249,17 @@ function ready(companies){
     var button = document.querySelector('.prompttest');
     var showtxt = document.querySelector('.show');
     function popup3(e) {
-        var guest = window.prompt('請輸入欲查詢產業類別');
-        if (guest == null || "") {
+        var typeCatgory = window.prompt('請輸入欲查詢產業類別');
+        if (typeCatgory == null || "") {
             showtxt.innerHTML = '您已取消輸入'
         } else {
-            catagories = guest;
-            showtxt.innerHTML = '目前查詢的產業類別為: ' + guest;
+            catagories = typeCatgory;
+            showtxt.innerHTML = '目前查詢的產業類別為: ' + typeCatgory;
         }
-        // function remove1(e) {
-        //     d3.select('cleanChart').selectAll('button').on('click',()=>{
-        //         d3.select('svg').selectAll('*').remove();
-        //     });
-        // }
-        // button2.addEventListener('click', remove1);
         const companyClean = filterData(companies);
-        console.log(companyClean);
         setupCanvas(companyClean, companyClean);
     }
     button.addEventListener('click', popup3);
-
-    // console.log(moviesClean);
-    // const barChartData = prepareBarChartData(moviesClean).sort(
-    //     (a,b)=>{
-    //         return d3.descending(a.revenue,b.revenue);
-    //     }
-    // );
-    // console.log(barChartData);
-    //Get Top 15 revenue movies
-    // const revenueData = chooseData("revenue", movieClean);
-
 }
 
 d3.csv('data/t187ap14_L (1).csv', type).then(
@@ -289,6 +271,6 @@ d3.csv('data/t187ap14_L (1).csv', type).then(
 );
 
 function chooseData(metric, companyClean){
-    const thisData = companyClean.sort((a,b)=>b[metric]-a[metric]).filter((d,i)=>i<30);
+    const thisData = companyClean.sort((a,b)=>b[metric]-a[metric]).filter((d,i)=>i<20);
     return thisData;
 }

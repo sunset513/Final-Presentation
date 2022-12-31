@@ -28,7 +28,16 @@ svg {
   stroke: white;
 }/*# sourceMappingURL=1.css.map */
 .tooltip{
+  /* height: -3000px; */
   position:absolute;
   background-color: aliceblue;
   opacity: initial;
+}
+.prompttest{
+  background-color:rgb(205, 232, 241);
+  border:0.4px #30305c dashed;
+}
+
+.controls:hover{
+  transform: scale(1.003);
 }
