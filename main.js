@@ -262,7 +262,7 @@ function ready(companies){
     button.addEventListener('click', popup3);
 }
 
-d3.csv('data/t187ap14_L (1).csv', type).then(
+d3.csv('data/t187ap14_L (2).csv', type).then(
     res => {
         // console.log('CSV:',res[0]);
         ready(res);
