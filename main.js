@@ -31,7 +31,7 @@ function filterData(data){
     return data.filter(
         d => {
             return(
-                d.companyName && d.revenue && d.netIncome && d.genre === catagories
+                d.companyName && d.revenue>0 && d.netIncome>0 && d.genre === catagories
 
             );
         }
@@ -96,8 +96,8 @@ function setupCanvas(barChartData, companyClean){
             enter => {
                 enter.append('rect').attr('class', 'bar')
                 .attr('x',0).attr('y',d=>yScale(d.companyName))
-                .attr('height',yScale.bandwidth()/1.5)
-                // .attr('height', 12)
+                // .attr('height',yScale.bandwidth()/1.5)
+                .attr('height', 16)
                 .style('fill','lightcyan')
                 .transition(transitionDelay)
                 .delay((d,i)=>i*20)
